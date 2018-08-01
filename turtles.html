@@ -7,6 +7,7 @@
     	* { padding: 0; margin: 0; }
     	canvas { background: #eee; display: block; margin: 0 auto; }
     </style>
+    <script type="text/javascript" src="turtles.js"></script>
 </head>
 
 <body>
@@ -38,7 +39,6 @@ setInterval(trash, 10);
 
     function turtle() {
       // drawing code
-      window.setTimeout(turtle, 2000);
       ctx.beginPath();
       ctx.arc(450, 850, 10, 0, Math.PI*2);
       ctx.fillStyle = "#71f756";
@@ -46,7 +46,7 @@ setInterval(trash, 10);
       ctx.closePath();
       console.log("after close path in draw function")
     }
-setInterval(turtle, 50);
+setInterval(turtle, 10);
 
   </script>
 </body>
