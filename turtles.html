@@ -10,32 +10,22 @@
 </head>
 
 <body>
-  <canvas id="myCanvas" width="500" height="400"></canvas>
+  <canvas id="myCanvas" width="900" height="900"></canvas>
 
   <script>
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
 
-    function draw() {
-      // drawing code
-      ctx.beginPath();
-      ctx.arc(50, 50, 10, 0, Math.PI*2);
-      ctx.fillStyle = "#71f756";
-      ctx.fill();
-      ctx.closePath();
-      console.log("after close path in draw function")
-    }
-draw();
-
-var x = 200;
-var y = canvas.height-30;
-
-var dx = 0;
-var dy = -1;
+    var x = 350;
+    //trash drops from top
+    //var y = canvas.height-950;
+    var y = canvas.height-850;
+    var dx = 0;
+    var dy = +1;
 
     function trash() {
       console.log("in trash");
-      //ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.beginPath();
       ctx.arc(x, y, 10, 0, Math.PI*2);
       ctx.fillStyle = "#0095DD";
@@ -44,7 +34,20 @@ var dy = -1;
       x += dx;
       y += dy;
     }
-setInterval(trash, 50);
+setInterval(trash, 10);
+
+    function turtle() {
+      // drawing code
+      window.setTimeout(turtle, 2000);
+      ctx.beginPath();
+      ctx.arc(450, 850, 10, 0, Math.PI*2);
+      ctx.fillStyle = "#71f756";
+      ctx.fill();
+      ctx.closePath();
+      console.log("after close path in draw function")
+    }
+setInterval(turtle, 50);
+
   </script>
 </body>
 </html>
