@@ -16,19 +16,35 @@
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
 
-    var x = canvas.width/2;
-    var y = canvas.height-30;
-
     function draw() {
       // drawing code
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.beginPath();
-      ctx.arc(x, y, 10, 0, Math.PI*2);
+      ctx.arc(50, 50, 10, 0, Math.PI*2);
       ctx.fillStyle = "#71f756";
       ctx.fill();
       ctx.closePath();
+      console.log("after close path in draw function")
     }
-    setInterval(draw, 10);
+draw();
+
+var x = 200;
+var y = canvas.height-30;
+
+var dx = 0;
+var dy = -1;
+
+    function trash() {
+      console.log("in trash");
+      //ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.beginPath();
+      ctx.arc(x, y, 10, 0, Math.PI*2);
+      ctx.fillStyle = "#0095DD";
+      ctx.fill();
+      ctx.closePath();
+      x += dx;
+      y += dy;
+    }
+setInterval(trash, 50);
   </script>
 </body>
 </html>
